@@ -32,22 +32,22 @@
 
 
 			<input type="text" id="ghusername" ng-model="url" placeholder="Github url...">
-
+			<!--On submit button click function getGitInfo is called-->
 			<a href="#" id="ghsubmitbtn" ng-click="getGitInfo()">Pull Repo Data</a>
 
 			<div id="ghapidata" class="clearfix"></div>
 
 		</div>
-
+		<!--If no user found-->
 		<div ng-show="userNotFound">
 
 			<h2>No User Info Found</h2>
 
 		</div>
-
+		<!--If the user is found and the page gets loaded-->
 		<div ng-show="loaded">
 
-
+			<!--User name along with its avatar are displayed-->
 			<h2>
 				{{user.name}}
 
@@ -73,11 +73,11 @@
 
 
 			<div class="repolist clearfix">
-
+				<!--No open Issues being printed by default-->
 				<p ng-hide="issuesFound">No openIssues</p>
-
+				<!--When issue count is found-->
 				<div ng-show="issuesFound">
-
+					<!--Printing all the queries-->
 					<p><strong>Open Issues: {{total_issues}}</strong></p>
 					<p><strong>Open Issues in 24h: {{issues_before_24}}</strong></p>
 
